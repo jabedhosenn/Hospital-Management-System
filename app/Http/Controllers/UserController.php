@@ -23,6 +23,12 @@ class UserController extends Controller
         // }
 
         // return abort(403, 'Unauthorized action.');
-        return view('dashboard');
+        return view('admin.dashboard');
+        // return view('dashboard');
+        // return view('index');
+    }
+
+    public function Index(){
+        return view('index');
     }
 }
