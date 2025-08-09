@@ -97,11 +97,11 @@
                     <span class="nav-link">Navigation</span>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="{{ route('index') }}"">
                         <span class="menu-icon">
                             <i class="mdi mdi-speedometer"></i>
                         </span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">Website</span>
                     </a>
                 </li>
                 <li class="nav-item menu-items">
@@ -115,8 +115,8 @@
                     </a>
                     <div class="collapse" id="auth">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank
-                                    Page </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}">Add Doctors </a>
+                            </li>
                             <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
                             </li>
                             <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
@@ -306,7 +306,9 @@
                     </button>
                 </div>
             </nav>
-
+            <div class="main-panel">
+                @yield('add_doctors')
+            </div>
             <!-- main-panel ends -->
         </div>
         <!-- page-body-wrapper ends -->

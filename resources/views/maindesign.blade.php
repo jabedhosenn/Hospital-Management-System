@@ -64,13 +64,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupport">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="{{ route('index') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="doctors.html">Doctors</a>
+                            <a class="nav-link" href=" {{ route('view_doctors') }} ">Doctors</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="blog.html">News</a>
@@ -106,6 +106,8 @@
     @yield('hero')
     <!-- Doctors -->
     @yield('index')
+    @yield('view_doctors')
+    @yield('news')
 
     <div class="page-section bg-light">
         <div class="container">

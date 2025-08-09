@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('usertype')->after('name')->default('user');
-        });
+        if (!Schema::hasColumn('users', 'usertype')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('usertype')->default('user')->after('name');
+            });
+        }
     }
 
     /**
@@ -21,8 +23,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+       if (Schema::hasColumn('users', 'usertype')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn('usertype');
+            });
+        }
     }
 };

@@ -1,18 +1,24 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
 Route::get('/', [UserController::class, 'Index'])->name('index');
+Route::get('/view_doctors', [UserController::class, 'viewDoctors'])->name('view_doctors');
 
 Route::get('/dashboard', [UserController::class, 'Dashboard'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
 // Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
-Route::middleware('auth', 'admin')->group(function () {
-
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/add_doctors', [AdminController::class, 'addDoctors'])
+    ->name('add_doctors');
+    Route::post('/add_doctors', [AdminController::class, 'postAddDoctors'])
+    ->name('post_doctors');
 });
 
 
