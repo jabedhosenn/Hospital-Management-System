@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [UserController::class, 'Index'])->name('index');
 Route::get('/view_doctors', [UserController::class, 'viewDoctors'])->name('view_doctors');
+Route::post('/appointment', [UserController::class, 'MakeAppointment'])->name('appointment');
 
 Route::get('/dashboard', [UserController::class, 'Dashboard'])
     ->middleware(['auth', 'verified'])
