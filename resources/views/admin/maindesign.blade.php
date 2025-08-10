@@ -110,14 +110,34 @@
                         <span class="menu-icon">
                             <i class="mdi mdi-security"></i>
                         </span>
-                        <span class="menu-title">User Pages</span>
+                        <span class="menu-title">Doctors</span>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="collapse" id="auth">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}">Add Doctors </a>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}"> Add Doctors </a>
                             </li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('view_doctors') }}"> View Doctors </a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register
+                                </a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false"
+                        aria-controls="auth">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-security"></i>
+                        </span>
+                        <span class="menu-title">Appointments</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="auth">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointments') }}"> View Appointments </a>
                             </li>
                             <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
                             </li>
@@ -307,13 +327,32 @@
                 </div>
             </nav>
             <div class="main-panel">
+                @yield('dashboard')
                 @yield('add_doctors')
+                @yield('view_doctors')
+                {{-- @yield('update_doctors') --}}
+                {{-- @yield('post_update_doctors') --}}
+                @yield('view_appointments')
             </div>
             <!-- main-panel ends -->
         </div>
         <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
+     <!-- partial:partials/_footer.html -->
+          <footer class="footer py-3">
+  <div class="container">
+    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-between align-items-center">
+      <span class="text-muted text-center text-sm-start me-sm-3">
+        &copy; One Health 2025. All rights reserved.
+      </span>
+      <span class="text-center text-sm-end mt-2 mt-sm-0">
+        Developed by <a href="https://jabedhosen.netlify.app/" target="_blank" rel="noopener noreferrer">Jabed Hosen</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
     <!-- plugins:js -->
     <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
