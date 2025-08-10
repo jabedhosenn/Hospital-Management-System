@@ -28,20 +28,6 @@ A comprehensive **Hospital Management System** built with **Laravel** and **Blad
 
 ---
 
-## Installation
-
-1. **Clone the repository**
-
-   git clone https://github.com/yourusername/hospital-management-system.git
-   cd hospital-management-system
-
-   
-2. **Install dependencies**
-
-composer install
-npm install
-npm run dev
-
 ### Usage
 
 #### Admin Dashboard
